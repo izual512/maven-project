@@ -2,8 +2,11 @@ pipeline {
 	agent any
 	stages {
 		stage('Build'){
+			withMaven(
+				maven: 'maven'
+				)
 			steps{
-				sh 'env'
+				sh 'mvn -v'
 			}
 		}
 	}
